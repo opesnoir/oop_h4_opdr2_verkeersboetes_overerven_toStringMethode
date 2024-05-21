@@ -26,6 +26,7 @@ public class Snelheidsboete extends Verkeersboete {
         super(naamDader, kentekenAuto);
         this.gemetenSnelheid = gemetenSnelheid;
         this.maximumSnelheid = maximumSnelheid;
+        bepaalBedrag();
     }
 
     //methode
