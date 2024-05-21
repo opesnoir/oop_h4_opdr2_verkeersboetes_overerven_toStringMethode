@@ -1,6 +1,6 @@
 package model;
 
-public class Snelheidsboete extends Verkeersboete{
+public class Snelheidsboete extends Verkeersboete {
     private int gemetenSnelheid;
     private int maximumSnelheid;
 
@@ -30,25 +30,24 @@ public class Snelheidsboete extends Verkeersboete{
 
     //methode
     // magic numbers verwijderen
-    public void bepaalBedrag(){
+    public void bepaalBedrag() {
         double bedrag;
-        if (this.gemetenSnelheid > 0 & this.gemetenSnelheid <= 10){
+        if (this.gemetenSnelheid > 0 & this.gemetenSnelheid <= 10) {
             bedrag = (this.gemetenSnelheid - this.maximumSnelheid) * 10;
         } else if (this.gemetenSnelheid > 10 & this.gemetenSnelheid <= 30) {
             bedrag = (this.gemetenSnelheid - this.maximumSnelheid) * 15;
         } else {
             bedrag = (this.gemetenSnelheid - this.maximumSnelheid) * 20;
         }
-        if (bedrag > 1000 ){
+        if (bedrag > 1000) {
             bedrag = 1000;
         }
         super.setBedrag(bedrag);
     }
 
-
-
-
-
-
-
+    @Override
+    public String toString() {
+        return super.toString().replace("Verkeersboete", "Snelheidsboete") + String.format(" voor %d km/u waar %d km/u is toegestaan.", this.gemetenSnelheid, this.maximumSnelheid);
+    }
 }
+
