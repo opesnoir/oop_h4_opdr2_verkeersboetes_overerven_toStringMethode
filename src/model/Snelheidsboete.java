@@ -1,4 +1,4 @@
 package model;
 
-public class Snelheidsboete {
+public class Snelheidsboete extends Verkeersboete{
 }
